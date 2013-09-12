@@ -3,6 +3,6 @@
   "description": "The ParaViewWeb JavaScript API",
   "homepage": "https://github.com/fullflavedave/paraviewweb",
   "author": "Dave Allen <fullflavedave@github.com>",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "git": "https://github.com/fullflavedave/paraviewweb.git"
 }
