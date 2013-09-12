@@ -1,3 +1,36 @@
+ParaViewWeb = {
+  test: function () {
+    console.log("Calling function ParaViewWeb.test()");
+    return "success";
+  },
+
+  JavaScriptRenderer: function (rendererId, coreServiceURL) {
+    this.baseURL = coreServiceURL + "/LastPicture";
+    this.sessionId = "";
+    this.viewId = "";
+    this.nbError = 0;
+    this.nbStart = 0;
+    this.interactiveRatio = 2;
+    this.localTimeStamp = 0;
+    this.bgImage = new Image();
+    this.status = 0;
+    this.realWidth = -1;
+    this.realHeight = -1;
+    this.view = new Image();
+    this.view.id = rendererId;
+    this.view.alt = "ParaView Renderer";
+    this.lastImageTime = new Date().getTime();
+    this.fps = 0;
+    this.targetDeltaT = 33;
+    this.nbShow = 0;
+    this.useLongPolling = true;
+    this.waitForInteraction = true;
+    this.bgImage.viewId = rendererId;
+    this.bgImage.otherThis = this;
+    jsRenderers[rendererId] = this;
+  }
+};
+
 glMatrixArrayType = typeof Float32Array != "undefined" ? Float32Array : typeof WebGLFloatArray != "undefined" ? WebGLFloatArray : Array;
 var vec3 = {};
 vec3.create = function (a) {
@@ -2493,35 +2526,4 @@ function mouseServerInt(rendererId, sessionId, viewId, action, event) {
   return false;
 }
 
-ParaViewWeb = {
-  test: function () {
-    console.log("Calling function ParaViewWeb.test()");
-    return "success";
-  },
 
-  JavaScriptRenderer: function (rendererId, coreServiceURL) {
-    this.baseURL = coreServiceURL + "/LastPicture";
-    this.sessionId = "";
-    this.viewId = "";
-    this.nbError = 0;
-    this.nbStart = 0;
-    this.interactiveRatio = 2;
-    this.localTimeStamp = 0;
-    this.bgImage = new Image();
-    this.status = 0;
-    this.realWidth = -1;
-    this.realHeight = -1;
-    this.view = new Image();
-    this.view.id = rendererId;
-    this.view.alt = "ParaView Renderer";
-    this.lastImageTime = new Date().getTime();
-    this.fps = 0;
-    this.targetDeltaT = 33;
-    this.nbShow = 0;
-    this.useLongPolling = true;
-    this.waitForInteraction = true;
-    this.bgImage.viewId = rendererId;
-    this.bgImage.otherThis = this;
-    jsRenderers[rendererId] = this;
-  }
-};
