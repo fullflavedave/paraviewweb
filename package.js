@@ -3,7 +3,6 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
-  api.use(['minimongo', 'mongo-livedata', 'templating'], 'client');
-  api.add_files(['lib/paraviewweb.js'], 'client');
+  api.add_files(['paraviewweb.js'], 'client');
   api.export(['ParaViewWeb'], 'client');
 });
