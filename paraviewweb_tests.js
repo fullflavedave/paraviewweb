@@ -1,3 +1,3 @@
 Tinytest.add("ParaViewWeb package found", function(test) {
-  test.equal(ParaViewWeb.test(), null);
+  test.equal(ParaViewWeb.test(), "success");
 });
