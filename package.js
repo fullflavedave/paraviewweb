@@ -13,5 +13,5 @@ Package.on_test(function(api) {
   api.use('paraviewweb', 'client');
   api.use(['tinytest', 'test-helpers'], 'client');
 
-  api.add_files('errors_tests.js', 'client');
+  api.add_files('paraviewweb_tests.js', 'client');
 });
